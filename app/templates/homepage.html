@@ -4,16 +4,11 @@
         <title>Hello World!</title>
     </head>
     <body>
-        <p id="change-me">Here are some buttons:</p>
-          {% for button in buttons %}
-          <div><button>Server side.</button></div>
+        <p id="change-me">Here are some things to do:</p>
+        <ul>
+          {% for row in rows %}
+          <li>{{ row.title }} ({{ row.notes }})</li>
           {% endfor %}
-        <p>Here are some more buttons:</p>
-        <div id="some-more-buttons"></div>
-    <script>
-        var foo = document.getElementById("some-more-buttons");
-        var html_buttons = "<div><button>Client side.</button></div>".repeat(Math.random() * 10);
-        foo.innerHTML = html_buttons;
-    </script>
+        </ul>
     </body>
 </html>
