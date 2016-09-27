@@ -1,18 +1,16 @@
 from http.server import HTTPServer, BaseHTTPRequestHandler
+from random import randint
 
 
-html_content = """
+html_template = """
 <!DOCTYPE html>
 <html>
     <head>
         <title>Hello World!</title>
     </head>
     <body>
-        <p id="change-me">Here is some content</p>
-    <script>
-        var foo = document.getElementById("change-me");
-        foo.textContent = "Changed by JavaScript!";
-    </script>
+        <p id="change-me">Here are some buttons:</p>
+        {0}
     </body>
 </html>"""
 
@@ -22,6 +20,9 @@ class handler(BaseHTTPRequestHandler):
         self.send_response(200)
         self.send_header('Content-type', 'text/html')
         self.end_headers()
+
+        html_button = "<button>Press me!</button>" * randint(0,10)
+        html_content = html_template.format(html_button)
 
         self.wfile.write(bytes(html_content, 'utf-8'))
 
