@@ -9,7 +9,8 @@ from app.flasky import the_app
 @the_app.route('/')
 def homepage():
     return render_template(
-        'homepage.html'
+        'homepage.html',
+        buttons = range(10)
     )
 
 

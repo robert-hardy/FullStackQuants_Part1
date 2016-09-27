@@ -5,6 +5,9 @@
     </head>
     <body>
         <p id="change-me">Here are some buttons:</p>
+          {% for button in buttons %}
+          <div><button>Server side.</button></div>
+          {% endfor %}
         <p>Here are some more buttons:</p>
         <div id="some-more-buttons"></div>
     <script>
