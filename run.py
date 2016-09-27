@@ -8,7 +8,11 @@ html_content = """
         <title>Hello World!</title>
     </head>
     <body>
-        <p>Here is some content</p>
+        <p id="change-me">Here is some content</p>
+    <script>
+        var foo = document.getElementById("change-me");
+        foo.textContent = "Changed by JavaScript!";
+    </script>
     </body>
 </html>"""
 
