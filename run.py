@@ -21,7 +21,7 @@ class handler(BaseHTTPRequestHandler):
         self.send_header('Content-type', 'text/html')
         self.end_headers()
 
-        html_button = "<button>Press me!</button>" * randint(0,10)
+        html_button = "<div><button>Press me!</button></div>" * randint(0,10)
         html_content = html_template.format(html_button)
 
         self.wfile.write(bytes(html_content, 'utf-8'))
